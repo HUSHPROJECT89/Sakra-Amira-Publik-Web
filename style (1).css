@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8faff;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d40000;
+  color: white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.judul {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #aef6ff;
+}
+
+.hero-text h2 {
+  font-size: 2.5em;
+  color: #d40000;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.btn.merah {
+  background-color: #d40000;
+  color: white;
+}
+
+.btn.putih {
+  background-color: white;
+  color: #d40000;
+  border: 2px solid #d40000;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #d40000;
+  color: white;
+}
+.content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2em;
+  color: #d40000;
+}
+
+.jenjang-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: white;
+  border: 2px solid #d40000;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  color: #d40000;
+  margin-top: 0;
+}
+.formulir {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulir label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.formulir input,
+.formulir select,
+.formulir textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #d40000;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.formulir button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.kontak-box {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #d40000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.kontak-box a {
+  color: #d40000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.kontak-box a:hover {
+  text-decoration: underline;
+}

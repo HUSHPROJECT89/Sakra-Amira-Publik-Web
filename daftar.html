@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran - Sakra Amira</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo Sakra Amira" class="logo" />
+      <h1 class="judul">Sakra Amira</h1>
+    </div>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="program.html">Program</a>
+      <a href="daftar.html">Pendaftaran</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>Formulir Pendaftaran</h2>
+    <form class="formulir" action="#" method="post">
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="jenjang">Jenjang:</label>
+      <select id="jenjang" name="jenjang" required>
+        <option value="">-- Pilih Jenjang --</option>
+        <option value="SD">SD (Kelas 4–6)</option>
+        <option value="SMP">SMP (Kelas 7–9)</option>
+        <option value="SMA">SMA (Kelas 10–12)</option>
+      </select>
+
+      <label for="nohp">Nomor WhatsApp:</label>
+      <input type="tel" id="nohp" name="nohp" required>
+
+      <label for="catatan">Catatan Tambahan (opsional):</label>
+      <textarea id="catatan" name="catatan" rows="4"></textarea>
+
+      <button type="submit" class="btn merah">Kirim Pendaftaran</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sakra Amira. All rights reserved.</p>
+  </footer>
+</body>
+</html>
