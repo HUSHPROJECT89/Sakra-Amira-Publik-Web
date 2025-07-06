@@ -28,8 +28,8 @@
     }
 
     .logo-img {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
       margin-right: 10px;
@@ -52,6 +52,7 @@
     .content h2 {
       color: #d40000;
       text-align: center;
+      margin-bottom: 30px;
     }
 
     .news-item {
@@ -60,6 +61,7 @@
       border-left: 4px solid #d40000;
       background-color: #fff5f5;
       border-radius: 8px;
+      font-size: 1.1em;
     }
 
     footer {
@@ -67,6 +69,7 @@
       padding: 20px;
       background-color: #d40000;
       color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -102,7 +105,7 @@
           data.forEach(berita => {
             const item = document.createElement("div");
             item.className = "news-item";
-            item.textContent = berita;
+            item.textContent = berita.text; // Ambil isi berita
             container.appendChild(item);
           });
         }
