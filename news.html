@@ -1,71 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Berita Sakra Amira</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    .news-box {
-      background: #fff7f7;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 600px;
-      border-left: 4px solid #d40000;
-      border-radius: 5px;
-    }
-    .news-box h3 {
-      margin: 0 0 5px;
-      color: #d40000;
-    }
-    .news-box p {
+    body {
       margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #e8faff;
+      color: #222;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #d40000;
+      color: white;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .judul {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .content h2 {
+      color: #d40000;
+      text-align: center;
+    }
+
+    .news-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 4px solid #d40000;
+      background-color: #fff5f5;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d40000;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <img src="logo.jpg" alt="Logo Sakra Amira" class="logo-img">
-      <h1>Berita Terbaru</h1>
+      <img src="logo.jpg" alt="Logo Sakra Amira" class="logo-img" />
+      <h1 class="judul">Berita Sakra Amira</h1>
     </div>
   </header>
 
   <main class="content">
-    <div id="newsContainer">
-      <p>Sedang memuat berita...</p>
+    <h2>Berita Terbaru</h2>
+    <div id="news-container">
+      <p>Memuat berita...</p>
     </div>
   </main>
 
+  <footer>
+    <p>&copy; 2025 Sakra Amira. All rights reserved.</p>
+  </footer>
+
   <script>
-    async function loadBerita() {
-      const container = document.getElementById('newsContainer');
-      try {
-        const res = await fetch('https://hushproject89.github.io/Sakra-Amira-Internal-Web/news.json');
-        const berita = await res.json();
+    fetch("https://hushproject89.github.io/Sakra-Amira-Internal-Web/news.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("news-container");
+        container.innerHTML = "";
 
-        if (berita.length === 0) {
-          container.innerHTML = '<p><i>Belum ada berita terbaru.</i></p>';
-          return;
+        if (data.length === 0) {
+          container.innerHTML = "<p>Tidak ada berita saat ini.</p>";
+        } else {
+          data.forEach(berita => {
+            const item = document.createElement("div");
+            item.className = "news-item";
+            item.textContent = berita;
+            container.appendChild(item);
+          });
         }
-
-        container.innerHTML = '';
-        berita.forEach(item => {
-          const div = document.createElement('div');
-          div.className = 'news-box';
-          div.innerHTML = `
-            <h3>${item.judul}</h3>
-            <p>${item.isi}</p>
-          `;
-          container.appendChild(div);
-        });
-      } catch (err) {
-        container.innerHTML = '<p style="color:red;">Gagal memuat berita.</p>';
-        console.error(err);
-      }
-    }
-
-    loadBerita();
+      })
+      .catch(err => {
+        document.getElementById("news-container").innerHTML = "<p>Gagal memuat berita.</p>";
+      });
   </script>
 </body>
 </html>
