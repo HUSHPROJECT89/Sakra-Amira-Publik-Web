@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita Sakra Amira</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .news-box {
+      background: #fff7f7;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-left: 4px solid #d40000;
+      border-radius: 5px;
+    }
+    .news-box h3 {
+      margin: 0 0 5px;
+      color: #d40000;
+    }
+    .news-box p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo Sakra Amira" class="logo-img">
+      <h1>Berita Terbaru</h1>
+    </div>
+  </header>
+
+  <main class="content">
+    <div id="newsContainer">
+      <p>Sedang memuat berita...</p>
+    </div>
+  </main>
+
+  <script>
+    async function loadBerita() {
+      const container = document.getElementById('newsContainer');
+      try {
+        const res = await fetch('https://hushproject89.github.io/Sakra-Amira-Internal-Web/news.json');
+        const berita = await res.json();
+
+        if (berita.length === 0) {
+          container.innerHTML = '<p><i>Belum ada berita terbaru.</i></p>';
+          return;
+        }
+
+        container.innerHTML = '';
+        berita.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'news-box';
+          div.innerHTML = `
+            <h3>${item.judul}</h3>
+            <p>${item.isi}</p>
+          `;
+          container.appendChild(div);
+        });
+      } catch (err) {
+        container.innerHTML = '<p style="color:red;">Gagal memuat berita.</p>';
+        console.error(err);
+      }
+    }
+
+    loadBerita();
+  </script>
+</body>
+</html>
