@@ -5,6 +5,7 @@ body {
   color: #222;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,6 +45,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Hero section */
 .hero {
   padding: 60px 20px;
   text-align: center;
@@ -86,12 +88,15 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #d40000;
   color: white;
 }
+
+/* Konten umum */
 .content {
   padding: 40px 20px;
   text-align: center;
@@ -102,6 +107,7 @@ footer {
   color: #d40000;
 }
 
+/* Kartu jenjang */
 .jenjang-list {
   display: flex;
   flex-wrap: wrap;
@@ -128,6 +134,8 @@ footer {
   color: #d40000;
   margin-top: 0;
 }
+
+/* Formulir */
 .formulir {
   max-width: 500px;
   margin: 0 auto;
@@ -161,6 +169,8 @@ footer {
   font-size: 1em;
   cursor: pointer;
 }
+
+/* Kontak */
 .kontak-box {
   max-width: 600px;
   margin: 30px auto;
@@ -180,4 +190,15 @@ footer {
 
 .kontak-box a:hover {
   text-decoration: underline;
+}
+
+/* ==== Tambahan: Perbaikan Ukuran Logo di halaman khusus (seperti news) ==== */
+
+.logo-img,
+.logo-news {
+  display: block;
+  margin: 20px auto;
+  max-width: 120px;
+  height: auto;
+  border-radius: 12px;
 }
